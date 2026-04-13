@@ -31,6 +31,10 @@ website:
           - href: outcomes/campaigns.qmd
             text: "{{< iconify game-icons:paper-boat >}} Field campaigns"
     foreground: "white"
+    tools:
+        - icon: github
+          href: "https://github.com/heatcordoba/heatcordoba.github.io"
+          target: _blank
   favicon: img/isotipos/POSITIVO TRANSPARENTE.png
   open-graph: 
     site-name: Heat Córdoba
