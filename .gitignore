@@ -1,6 +1,7 @@
 /.quarto/
 **/*.quarto_ipynb
 _site
+_extensions
 
 # History files
 .Rhistory
