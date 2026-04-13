@@ -1,0 +1,26 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Verifico repositorio
+        uses: actions/checkout@v4
+
+      - name: Configuro Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Creo sitio y publico
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
