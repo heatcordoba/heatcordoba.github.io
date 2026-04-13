@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: 
       contents: write
+      pages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,32 +27,7 @@ jobs:
         with:
           version: pre-release
       # Add any additional steps as needed, such as installing dependencies
-      - name: "Build"
-        shell: bash
-        run: |
-          [ ! -f _quarto.yml ] && echo -e "project:\n  output-dir: _site" > _quarto.yml
-          if grep -q "output-dir: _site" _quarto.yml; then
-            quarto render
-          else
-            quarto render --output-dir _site
-          fi
-      - name: "Deploy"
-        shell: bash
-        env:
-          GH_PAGES: gh-pages
-        run: |
-          git config --local user.name github-actions[bot]
-          git config --local user.email 41898282+github-actions[bot]@users.noreply.github.com
-          BUILD_DIR=$(mktemp -d)
-          mv _site "${BUILD_DIR}/quarto-output"
-          if git ls-remote --exit-code origin "${GH_PAGES}"; then
-            git fetch origin "${GH_PAGES}"
-            git checkout origin/"${GH_PAGES}"
-          else
-            git checkout --orphan "${GH_PAGES}"
-            git rm -rf .
-          fi
-          mv ${BUILD_DIR}/quarto-output/* .
-          git add . || echo "No changes."
-          git commit --allow-empty -m "ci: quarto render" || echo "No changes."
-          git push origin "${GH_PAGES}" || echo "No changes."
+      - name: Build and Deploy
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
