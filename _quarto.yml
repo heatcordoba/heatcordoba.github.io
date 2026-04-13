@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: ""
@@ -46,6 +47,7 @@ format:
     toc-title: "Content"
     page-layout: full
     link-external-newwindow: true
+    crossrefs-hover: false
     
 execute:
   freeze: auto
