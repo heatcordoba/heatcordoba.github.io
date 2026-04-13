@@ -46,7 +46,7 @@ format:
     theme:
       - cosmo
       - brand
-    css: extras/estilo.scss
+    css: estilo.scss
     toc: true
     toc-title: "Content"
     page-layout: full
