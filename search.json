@@ -1,8 +1,8 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Proyect Heat Córdoba",
+    "objectID": "water.html",
+    "href": "water.html",
+    "title": "Water Quality Maps",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
@@ -12,5 +12,26 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "aedes.html",
+    "href": "aedes.html",
+    "title": "Aedes aegypti mosquito maps",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "urban.html",
+    "href": "urban.html",
+    "title": "Urban Heat Island Maps",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Proyect Heat Córdoba",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
