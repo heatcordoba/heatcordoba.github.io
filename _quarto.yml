@@ -2,23 +2,50 @@ project:
   type: website
 
 website:
-  title: "Proyect <b>Heat Córdoba</b>"
-  navbar:
+  title: ""
+  page-footer:
+    center: "![](img/org/conae.png){width=90} &nbsp;&nbsp;&nbsp;&nbsp; ![](img/org/ig.png){width=90} ![](img/org/esa.png){width=90} ![](img/org/future-earth.png){width=90} ![](img/org/pavia.png){width=80}"
+  navbar: 
     left:
-      - href: index.qmd
-        text: Home
       - href: water.qmd
+        text: "{{< iconify ion:water >}} Water quality"
       - href: urban.qmd
+        text: "{{< iconify mdi:heat-index >}} Urban Heat Island"
       - href: aedes.qmd
-      - about.qmd
-
+        text: "{{< iconify fluent-emoji-high-contrast:mosquito >}} Aedes aegypti mosquito" 
+      - href: about.qmd
+        text: "{{< iconify ri:team-fill >}} Team"
+      - text: "{{< iconify mdi:pen >}} Outcomes"
+        menu:
+          - href: outcomes/reports.qmd
+            text: "{{< iconify boxicons:file-report >}} Reports"
+          - href: outcomes/academic.qmd
+            text: "{{< iconify mingcute:paper-fill >}} Academic publications"
+          - href: outcomes/media.qmd
+            text: "{{< iconify material-symbols:tv-outline >}} Heat Córdoba on media"
+          - href: outcomes/workshops.qmd
+            text: "{{< iconify qlementine-icons:education-16 >}} Workshop"
+          - href: outcomes/education.qmd
+            text: "{{< iconify fa7-solid:university >}} Education resources"
+          - href: outcomes/campaigns.qmd
+            text: "{{< iconify game-icons:paper-boat >}} Field campaigns"
+    foreground: "white"
+  favicon: img/isotipos/POSITIVO TRANSPARENTE.png
+  open-graph: 
+    site-name: Heat Córdoba
+  repo-url: https://github.com/heatcordoba/heatcordoba.github.io
+  repo-actions: [edit, source, issue]
+  
 format:
   html:
     theme:
       - cosmo
       - brand
-    css: styles.css
+    css: extras/estilo.scss
     toc: true
-
+    toc-title: "Content"
+    page-layout: full
+    link-external-newwindow: true
+    
 execute:
   freeze: auto
