@@ -4,7 +4,7 @@ project:
 website:
   title: ""
   page-footer:
-    center: "![](img/org/conae.png){width=90} &nbsp;&nbsp;&nbsp;&nbsp; ![](img/org/ig.png){width=90} ![](img/org/esa.png){width=90} ![](img/org/future-earth.png){width=90} ![](img/org/pavia.png){width=80}"
+    center: "![](img/org/conae.png){width=100} &nbsp;&nbsp;&nbsp;&nbsp; ![](img/org/ig.png){width=100} ![](img/org/esa.png){width=100} ![](img/org/future-earth.png){width=100} ![](img/org/pavia.png){width=80}"
   navbar: 
     left:
       - href: water.qmd
