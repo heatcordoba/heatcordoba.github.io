@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+
+$blanco: #FFFFFF;
+$naranja: #f86501;
+
+/*-- scss:rules --*/
+
+#title-block-header.quarto-title-block.default .quarto-title .title {
+    font-size: 4em;
+}
+
+titulo {
+    font-size: 4rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
