@@ -1,0 +1,6 @@
+---
+title: "Academic publications"
+logo: medium
+---
+
+This is a Quarto website.
