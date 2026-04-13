@@ -7,6 +7,9 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: water.qmd
+      - href: urban.qmd
+      - href: aedes.qmd
       - about.qmd
 
 format:
