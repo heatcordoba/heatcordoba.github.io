@@ -1,0 +1,29 @@
+color:
+  palette:
+    negro: "#1a1a1a"
+    blanco: "#f7f7f7"
+    amarillo: "#fce500"
+    naranja: "#f86501"
+  background: blanco
+  foreground: negro
+  primary: naranja
+  secondary: amarillo
+
+logo: 
+  medium: img/imagotipos/POSITIVO TRANSPARENTE.png
+
+typography:
+  fonts:
+    - family: Nunito
+      source: google
+    - family: Pattaya
+      source: google
+    - family: Neue Power
+      source: file
+      files:
+        - path: extras/NeuePower-Ultra.ttf
+  base: 
+    family: Nunito
+  headings: 
+    family: Neue Power
+    color: naranja
