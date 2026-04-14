@@ -12,3 +12,7 @@ titulo {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+.sidebar nav[role=doc-toc] ul {
+    color:	rgb(50,50,50);
+}
