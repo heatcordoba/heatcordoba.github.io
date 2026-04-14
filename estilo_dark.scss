@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+
+$blanco: #FFFFFF;
+$naranja: #f86501;
+
+$navbar-bg: $naranja;
+$footer-bg: $naranja;
+$link-color: $naranja;
+$toc-color: rgb(200, 200, 200);
+$link-hover-decoration: underline;
+$dropdown-bg: $naranja !default;
+$dropdown-color: $blanco;
+
+$dropdown-link-color: $blanco !default;
+$dropdown-link-hover-color: $dropdown-link-color !default;
+$dropdown-link-hover-bg: darken($naranja, 10) !default;
+
+/*-- scss:rules --*/
+
+#title-block-header.quarto-title-block.default .quarto-title .title {
+    font-size: 4em;
+}
+
+titulo {
+    font-size: 4rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+// .sidebar nav[role=doc-toc] ul {
+//     color:	rgb(200,200,200);
+// }
