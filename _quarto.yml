@@ -5,7 +5,7 @@ project:
 website:
   title: ""
   page-footer:
-    center: "![](img/org/conae.png){width=100} &nbsp;&nbsp;&nbsp;&nbsp; ![](img/org/ig.png){width=100} ![](img/org/esa.png){width=100} ![](img/org/future-earth.png){width=100} ![](img/org/pavia.png){width=80}"
+    center: "![](img/org/conae-2.png){width=100} &nbsp;&nbsp;&nbsp;&nbsp; ![](img/org/ig-2.png){width=100} ![](img/org/esa-2.png){width=100} ![](img/org/future-earth-2.png){width=100} &nbsp;&nbsp; ![](img/org/pavia-2.png){width=70}"
   navbar: 
     left:
       - href: water.qmd
@@ -40,13 +40,17 @@ website:
     site-name: Heat Córdoba
   repo-url: https://github.com/heatcordoba/heatcordoba.github.io
   repo-actions: [edit, source, issue]
+  back-to-top-navigation: true
   
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+      light: [flatly, estilo_light.scss]
+      dark: [darkly, estilo_dark.scss]
+      # - cosmo
+      # - brand
+    # css: styles.css
+    respect-user-color-scheme: true
     toc: true
     toc-title: "Content"
     page-layout: full
