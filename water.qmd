@@ -1,7 +1,64 @@
 ---
 title: "Water Quality Maps"
+format: 
+  html: 
+    toc: true
 ---
 
-This is a Quarto website.
+::: {.column-margin}
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Water sampling
+
+San Roque Lake.
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| column: screen-inset
+
+library(terra)
+library(leaflet)
+library(leafem)
+library(leaflet.extras)
+
+p <- data.frame(x = -64.468102, y = -31.376373) |>
+  vect(geom = c("x", "y"), crs = "EPSG:4326")
+p$label <- "a"
+
+leaflet(p) |>
+  setView(
+    lng = as.numeric(geom(p)[, "x"]),
+    lat = as.numeric(geom(p)[, "y"]),
+    zoom = 13
+  ) |>
+  addTiles(group = "OSM (default)") |>
+  addProviderTiles(
+    providers$CartoDB.Positron,
+    group = "Positron (minimal)",
+    options = providerTileOptions(noWrap = TRUE)
+  ) |>
+  addProviderTiles(
+    providers$Esri.WorldImagery,
+    group = "World Imagery (satellite)",
+    options = providerTileOptions(noWrap = TRUE)
+  ) |>
+  addMarkers(popup = ~label, group = "grupo") |>
+  addLayersControl(
+    baseGroups = c(
+      "OSM (default)",
+      "Positron (minimal)",
+      "World Imagery (satellite)"
+    ),
+    overlayGroups = "grupo",
+    options = layersControlOptions(collapsed = TRUE)
+  ) |>
+  addResetMapButton() |>
+  addFullscreenControl(position = "bottomright")
+```
+
+# Methodology
+
+- Chlorophyll-a
+- Cyanobacteria
