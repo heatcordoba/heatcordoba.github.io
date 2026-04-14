@@ -5,7 +5,7 @@ project:
 website:
   title: ""
   page-footer:
-    center: "![](img/org/conae-2.png){width=100} &nbsp;&nbsp;&nbsp;&nbsp; ![](img/org/ig-2.png){width=100} ![](img/org/esa-2.png){width=100} ![](img/org/future-earth-2.png){width=100} &nbsp;&nbsp; ![](img/org/pavia-2.png){width=70}"
+    center: "[![](img/org/conae-2.png){width=80}](https://www.argentina.gob.ar/ciencia/conae) &nbsp;&nbsp;&nbsp;&nbsp; [![](img/org/ig-2.png){width=120}](https://ig.conae.unc.edu.ar/) [![](img/org/esa-2.png){width=100}](https://www.esa.int/) [![](img/org/future-earth-2.png){width=120}](https://futureearth.org/) &nbsp;&nbsp; [![](img/org/pavia-2.png){width=50}](https://portale.unipv.it/it)"
   navbar: 
     left:
       - href: water.qmd
@@ -47,15 +47,22 @@ format:
     theme:
       light: [flatly, estilo_light.scss]
       dark: [darkly, estilo_dark.scss]
-      # - cosmo
-      # - brand
-    # css: styles.css
     respect-user-color-scheme: true
     toc: true
     toc-title: "Content"
     page-layout: full
     link-external-newwindow: true
     crossrefs-hover: false
+    grid:
+    #   sidebar-width: 300px
+    #   body-width: 900px
+      margin-width: 350px
+    #   gutter-width: 1.5rem
     
 execute:
   freeze: auto
+  echo: false
+  eval: true
+
+editor_options: 
+  chunk_output_type: console
