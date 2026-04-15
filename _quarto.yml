@@ -45,8 +45,14 @@ website:
 format:
   html:
     theme:
-      light: [flatly, estilo_light.scss]
-      dark: [darkly, estilo_dark.scss]
+      light: 
+        - flatly
+        - extras/estilo.scss
+        - extras/estilo_light.scss
+      dark: 
+        - darkly
+        - extras/estilo.scss
+        - extras/estilo_dark.scss
     respect-user-color-scheme: true
     toc: true
     toc-title: "Content"
