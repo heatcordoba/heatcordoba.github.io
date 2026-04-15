@@ -17,20 +17,35 @@ San Roque Lake.
 #| echo: false
 #| warning: false
 #| column: screen-inset
-
 library(terra)
 library(leaflet)
 library(leafem)
 library(leaflet.extras)
+library(leafpop)
+library(tidyverse)
 
-p <- data.frame(x = -64.468102, y = -31.376373) |>
-  vect(geom = c("x", "y"), crs = "EPSG:4326")
-p$label <- "a"
+# datos de muestreo
+p_tbl <- tibble(
+  x = c(-64.469365, -64.468102, -64.484772),
+  y = c(-31.376373, -31.366567, -31.393680),
+  cla = c(10, 20, 30),
+  ciano = c(1, 2, 3),
+  img = paste0("img/muestreos/fig", 1:3, ".jpg"),
+  sitio = paste0("P", 1:3)
+)
 
-leaflet(p) |>
+# convierto a vector
+p <- vect(p_tbl, geom = c("x", "y"), crs = "EPSG:4326")
+
+# centro del Lago, para ubicar el mapa
+centro_lng <- -64.465986
+centro_lat <- -31.374978
+
+# mapa
+leaflet(p, height = 600) |>
   setView(
-    lng = as.numeric(geom(p)[, "x"]),
-    lat = as.numeric(geom(p)[, "y"]),
+    lng = centro_lng,
+    lat = centro_lat,
     zoom = 13
   ) |>
   addTiles(group = "OSM (default)") |>
@@ -44,7 +59,20 @@ leaflet(p) |>
     group = "World Imagery (satellite)",
     options = providerTileOptions(noWrap = TRUE)
   ) |>
-  addMarkers(popup = ~label, group = "grupo") |>
+  addMarkers(
+    label = ~sitio,
+    popup = popupTable(
+      select(p_tbl, sitio, cla, ciano),
+      row.numbers = FALSE,
+      feature.id = FALSE,
+      className = "style='font-size: 5em;'"
+    ),
+    group = "grupo",
+    icon = icons(
+      iconUrl = "https://api.iconify.design/famicons/pin-sharp.svg?height=30&color=%23f86501"
+    )
+  ) |>
+  addPopupImages(p$img, tooltip = FALSE, group = "grupo", width = 400) |>
   addLayersControl(
     baseGroups = c(
       "OSM (default)",
