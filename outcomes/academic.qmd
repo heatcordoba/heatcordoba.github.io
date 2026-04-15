@@ -1,6 +1,13 @@
 ---
 title: "Academic publications"
 logo: medium
+bibliography: ../biblio/academic.bib
+csl: ../biblio/apa.csl
+nocite: |
+  @*
 ---
 
-This is a Quarto website.
+Academic articles produced by this project.
+
+::: {#refs}
+:::
