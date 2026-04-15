@@ -13,9 +13,6 @@ format:
 San Roque Lake.
 
 ```{r}
-#| eval: true
-#| echo: false
-#| warning: false
 #| column: screen-inset
 library(terra)
 library(leaflet)
@@ -69,7 +66,7 @@ leaflet(p, height = 600) |>
     ),
     group = "grupo",
     icon = icons(
-      iconUrl = "https://api.iconify.design/famicons/pin-sharp.svg?height=30&color=%23f86501"
+      iconUrl = "https://api.iconify.design/eva/pin-fill.svg?height=30&color=%23f86501"
     )
   ) |>
   addPopupImages(p$img, tooltip = FALSE, group = "grupo", width = 400) |>
