@@ -1,5 +1,13 @@
 ---
-title: "About"
+title: "Team members"
 ---
 
-About this site
+## Professionals
+
+- Dra. Anabella Ferral [{{<iconify simple-icons:orcid style="color:#a6ce39;" >}}](https://orcid.org/0000-0002-9383-7728)
+
+- Dr. Matías Bonansea [{{<iconify simple-icons:orcid style="color:#a6ce39;">}}](https://orcid.org/0000-0003-1953-2595)
+
+## Interns
+
+- Mgtr. Vítor Gauto [{{<iconify simple-icons:orcid style="color:#a6ce39;">}}](https://orcid.org/0000-0001-9960-8558)
