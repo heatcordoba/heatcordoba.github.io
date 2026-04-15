@@ -2,6 +2,62 @@
 title: "Aedes aegypti mosquito maps"
 ---
 
-This is a Quarto website.
+Sitios de muestreo.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{r}
+#| column: screen-inset
+library(terra)
+library(leaflet)
+library(leafem)
+library(leaflet.extras)
+library(leafpop)
+library(tidyverse)
+
+d <- vect("datos/d.gpkg")
+d_centro <- ext(d) |>
+  vect(crs = "EPSG:4326") |>
+  centroids() |>
+  geom()
+
+leaflet(d, height = 600) |>
+  setView(
+    lng = as.numeric(d_centro[, "x"]),
+    lat = as.numeric(d_centro[, "y"]),
+    zoom = 8
+  ) |>
+  addTiles(group = "OSM (default)") |>
+  addProviderTiles(
+    providers$CartoDB.Positron,
+    group = "Positron (minimal)",
+    options = providerTileOptions(noWrap = TRUE)
+  ) |>
+  addProviderTiles(
+    providers$Esri.WorldImagery,
+    group = "World Imagery (satellite)",
+    options = providerTileOptions(noWrap = TRUE)
+  ) |>
+  addMarkers(
+    group = "grupo",
+    icon = icons(
+      iconUrl = "https://api.iconify.design/eva/pin-fill.svg?height=30&color=%23f86501"
+    ),
+    clusterOptions = markerClusterOptions(
+      spiderLegPolylineOptions = list(
+        weight = 1.5,
+        color = "#12AA56",
+        opacity = 0.5
+      )
+    )
+  ) |>
+  addLayersControl(
+    baseGroups = c(
+      "OSM (default)",
+      "Positron (minimal)",
+      "World Imagery (satellite)"
+    ),
+    overlayGroups = "grupo",
+    options = layersControlOptions(collapsed = TRUE)
+  ) |>
+  addResetMapButton() |>
+  addFullscreenControl(position = "bottomright")
+```
